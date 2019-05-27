@@ -21,6 +21,7 @@
 #include "VolumeManager.h"
 #include "fs/Exfat.h"
 #include "fs/Vfat.h"
+#include "fs/Ntfs.h"
 
 #include <android-base/logging.h>
 #include <android-base/properties.h>
@@ -110,6 +111,11 @@ status_t PublicVolume::doMount() {
             LOG(ERROR) << getId() << " failed filesystem check";
             return -EIO;
         }
+    } else if (mFsType == "ntfs" && ntfs::IsSupported()) {
+        if (ntfs::Check(mDevPath)) {
+            LOG(ERROR) << getId() << " failed filesystem check";
+            return -EIO;
+        }
     } else {
         LOG(ERROR) << getId() << " unsupported filesystem " << mFsType;
         return -EIO;
@@ -149,6 +155,12 @@ status_t PublicVolume::doMount() {
     } else if (mFsType == "exfat") {
         if (exfat::Mount(mDevPath, mRawPath, AID_ROOT,
                          (isVisible ? AID_MEDIA_RW : AID_EXTERNAL_STORAGE), 0007)) {
+            PLOG(ERROR) << getId() << " failed to mount " << mDevPath;
+            return -EIO;
+        }
+    } else if (mFsType == "ntfs") {
+        if (ntfs::Mount(mDevPath, mRawPath, false, false, false, AID_MEDIA_RW, AID_MEDIA_RW, 0007,
+                        true)) {
             PLOG(ERROR) << getId() << " failed to mount " << mDevPath;
             return -EIO;
         }
