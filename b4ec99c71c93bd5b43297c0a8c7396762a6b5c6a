@@ -50,6 +50,24 @@
       "message": "broke boot on mtk\nthe other change this caused was say you go from strongbox enabled to disabled, it killed boot\ngranted you shouldnt be doing that but many people here enabled strongbox without their spu supporting it and would want to dirty flash to a build with disabled strongbox\n",
       "revId": "b4ec99c71c93bd5b43297c0a8c7396762a6b5c6a",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4d4338f_09d9943d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000579
+      },
+      "writtenOn": "2022-01-25T11:36:54Z",
+      "side": 1,
+      "message": "vishal said the strongbox thing is just limited to me, so I blame xiaomi alioth for it like always",
+      "parentUuid": "e62bec24_f29c2228",
+      "revId": "b4ec99c71c93bd5b43297c0a8c7396762a6b5c6a",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
