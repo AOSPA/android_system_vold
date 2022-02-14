@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a10b7c4c_61852328",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2022-02-14T07:22:12Z",
+      "side": 1,
+      "message": "I\u0027ll never understand why this isn\u0027t on AOSP by now.",
+      "revId": "f1d9f70d381d48aafea5c14cd2f04cfc1629dd69",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
